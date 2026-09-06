@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>De-Risking Gate — Kronos Fusion Energy</title>
+<meta name="description" content="A Kronos de-risking gate — the reproduced result, verdict, and validator behind one binding physics claim.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kfe-shell.css"><script>window.KFE_SECTION='register';</script><script src="kfe-shell.js" defer></script>
+<style>
+:root{--bg:#1c232e;--panel:#252f3c;--line:rgba(150,165,190,.16);--gold:#d4ad5c;--ink:#e6ebf1;--dim:#aeb9c9;--mut:#8395ab;--green:#57b98a;--blue:#5ea0c0;--mono:'Space Mono',monospace;--sans:'Space Grotesk',system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px 90px}
+h1{font-size:clamp(24px,3.4vw,34px);line-height:1.1;margin:.1em 0}
+.crumb{font-family:var(--mono);font-size:12px;color:var(--mut);margin:18px 0 10px}.crumb a{color:var(--gold);text-decoration:none}
+.head{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:2px 0 4px}
+.pill{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:5px;background:rgba(94,160,192,.15);color:var(--blue)}
+.stamp{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.08em;padding:3px 10px;border-radius:6px;background:rgba(87,185,138,.15);color:var(--green)}
+.stamp.mut{background:rgba(103,116,138,.16);color:#9fb0c6}
+.sub{color:var(--dim);font-size:15px;margin:0 0 6px}
+.grid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;margin-top:16px}@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.vis img{width:100%;border-radius:12px;border:1px solid var(--line)}
+.facts{background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.facts .row{display:flex;justify-content:space-between;gap:12px;padding:9px 14px;border-bottom:1px solid rgba(150,165,190,.09);font-size:13.5px}
+.facts .row:last-child{border-bottom:0}.facts .k{color:var(--mut);font-family:var(--mono);font-size:11.5px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.6;margin-top:12px}
+h2{font-size:18px;margin:20px 0 4px}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btn{border:1px solid var(--line);border-radius:8px;padding:8px 14px;color:var(--gold);text-decoration:none;font-size:13.5px;font-weight:600}.btn:hover{background:var(--panel)}
+.datanote{font-size:13px;color:var(--mut);margin-top:14px}
+/* KVAL card */
+.kvcard{width:100%;aspect-ratio:16/10;background:linear-gradient(158deg,#26313f,#1a212b);padding:14px 16px;display:flex;flex-direction:column;gap:7px;border-radius:12px;border:1px solid var(--line)}
+.kvcard .kv-top{display:flex;justify-content:space-between;align-items:center}.kvcard .kv-id{font-family:var(--mono);font-size:12px;color:var(--gold)}.kvcard .kv-tag{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--mut)}
+.kvcard .kv-sealrow{display:flex;align-items:center;gap:8px}.kvcard .kv-mark{width:30px;height:30px;color:#6e7c90}.kvcard.ok .kv-mark{color:var(--green)}
+.kvcard .kv-stamp{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.08em;color:#6e7c90}.kvcard.ok .kv-stamp{color:var(--green)}
+.kvcard .kv-title{font-size:13px;color:#cdd7e2;line-height:1.3}
+.kvcard .kv-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}.kvcard .kv-chip{font-family:var(--mono);font-size:10px;background:rgba(94,160,192,.12);border:1px solid rgba(94,160,192,.25);border-radius:5px;padding:2px 7px;display:flex;gap:4px}.kvcard .kv-chip b{color:#e6ebf1}.kvcard .kv-chip i{color:#8fa0b8;font-style:normal}
+.kvcard .kv-res{font-size:11px;color:#8fa0b8;margin:auto 0 0}.kvcard .kv-foot{font-family:var(--mono);font-size:9px;color:#5d6b80}
+/* ===== live-recompute widget (KVAL.mountLive) ===== */
+.klive{background:#1f2733;border:1px solid rgba(150,165,190,.2);border-left:3px solid #57b98a;border-radius:12px;padding:14px 16px;margin-top:12px}
+.klive+.klive{margin-top:10px}
+.kl-h{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.kl-t{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#57b98a}
+.kl-badge{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:2px 9px;border-radius:5px;background:rgba(87,185,138,.15);color:#57b98a;white-space:nowrap}
+.kl-badge.no{background:rgba(224,104,90,.15);color:#e0685a}
+.kl-inputs{display:flex;flex-wrap:wrap;gap:8px}
+.kl-in{display:flex;flex-direction:column;gap:3px;font-family:'Space Mono',monospace;font-size:10px;color:#8fa0b8}
+.kl-in input{width:120px;font-family:'Space Grotesk',sans-serif;font-size:13px;background:#2a3441;border:1px solid rgba(150,165,190,.3);border-radius:6px;padding:5px 8px;color:#e6ebf1}
+.kl-in em{color:#cdd7e2;font-style:normal;font-size:12px}
+.kl-arrow{font-family:'Space Mono',monospace;font-size:10px;color:#6e7c90;margin:9px 0}
+.kl-outputs{display:flex;flex-wrap:wrap;gap:10px}
+.kl-out{background:#2a3441;border:1px solid rgba(150,165,190,.18);border-radius:8px;padding:7px 12px;display:flex;flex-direction:column}
+.kl-out b{font-family:'Space Mono',monospace;font-size:16px;color:#e6ebf1}
+.kl-out span{font-family:'Space Mono',monospace;font-size:9.5px;color:#8fa0b8}
+.kl-exp{font-family:'Space Mono',monospace;font-size:11px;color:#8fa0b8;margin-top:8px}
+.kl-note{font-size:11.5px;color:#6e7c90;margin-top:8px}</style>
+</head><body>
+<div class="wrap" id="main"></div>
+<script src="data/public_register.js"></script><script src="data/live_gates.js"></script><script src="_validators.js"></script>
+<script>
+function esc(s){return (s==null?'':(''+s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function qp(k){try{var m=new RegExp('[?&]'+k+'=([^&]*)').exec(location.search);return m?decodeURIComponent(m[1]):'';}catch(e){return'';}}
+var R=window.PUBREG||[], VC=window.PUBVC||{};
+var serial=(qp('s')||'').trim();
+var g=R.filter(function(r){return r.serial===serial;})[0];
+var main=document.getElementById('main');
+if(!g){main.innerHTML='<div class="crumb"><a href="index.html">← The de-risking register</a></div><h1>Gate not found</h1><p class="sub">No public gate matches “'+esc(serial)+'”.</p>';}
+else{
+var pmap={breeder:['Hyperion','/hyperion'],burner:['Aegis / MetroVolt','/aegis'],shared:['Programme','/hyperion']};
+var pm=pmap[g.machine]||['',''];
+var card=VC[serial], live=!!card;
+var done=g.local_status==='DONE'||/repro|pass|clear|confirm/i.test(g.verdict||'');
+var vis=card?'<div class="vis"><img src="validators/'+esc(card)+'" alt="'+esc(serial)+' validator card"></div>':'<div class="vis">'+KVAL.card(g)+'</div>';
+function row(k,v){return v?'<div class="row"><span class="k">'+esc(k)+'</span><span>'+esc(v)+'</span></div>':'';}
+var h='<div class="crumb"><a href="index.html">The de-risking register</a> › '+esc(serial)+'</div>';
+h+='<div class="head"><span class="pill">'+esc(serial)+'</span><span class="stamp'+(done?'':' mut')+'">'+esc(KVAL.stamp(g))+'</span></div>';
+h+='<h1>'+esc(g.title)+'</h1><p class="sub">'+esc(g.domain||'')+(pm[0]?' · '+pm[0]:'')+' · canon-locked, ratified freeze 2026-08-27.</p>';
+h+='<div class="grid"><div>'+vis;
+if(g.local_result){h+='<h2>Result &amp; accomplishment</h2><div class="panel">'+esc(g.local_result)+'</div>';}
+h+='<div id="klive"></div>';
+h+='</div><div><div class="facts">'+row('Serial',g.serial)+row('Machine',g.machine)+row('Layer',g.layer)+row('Domain',g.domain)+row('Code / tool',g.code)+row('Status',g.local_status)+row('Verdict',g.verdict)+'</div>';
+h+='<div class="links">'+(live?'<a class="btn" href="../Physics-Validation-Live_Simulation/validators-registry.html#'+encodeURIComponent(serial)+'">Run it live ↗</a>':'')+
+   (pm[1]?'<a class="btn" href="'+pm[1]+'">The machine ↗</a>':'')+'<a class="btn" href="/publications">Papers ↗</a><a class="btn" href="index.html">All gates ↗</a></div>';
+var lw=(window.KVAL&&KVAL.hasLive(serial));
+h+='<p class="datanote">'+(lw?'This gate recomputes live in your browser below — edit an input to re-run it.':(live?'This gate has a live in-browser validator — “Run it live” recomputes it from the open KRONOS toolkit.':'The result is the verified, reproduced record for this gate. Heavy-simulation and non-analytic gates are proven by their computed result, not re-run in the browser.'))+'</p>';
+h+='</div></div>';
+main.innerHTML=h; document.title=serial+' — Kronos De-Risking Register';
+if(window.KVAL&&KVAL.hasLive(serial))KVAL.mountLive(document.getElementById('klive'),serial);
+// per-gate Dataset for citation/SEO
+try{var ld={"@context":"https://schema.org","@type":"Dataset","name":esc(serial)+" — "+esc(g.title),"identifier":serial,"creator":{"@type":"Organization","name":"Kronos Fusion Energy"},"isPartOf":{"@type":"Dataset","name":"KRONOS De-Risking Register (Proof Edition)","identifier":"https://doi.org/10.5281/zenodo.22133057"},"license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true};var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(ld);document.head.appendChild(s);}catch(e){}
+}
+</script>
+</body></html>

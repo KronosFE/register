@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The De-Risking Register — Proof Edition</title>
+<meta name="description" content="The Kronos physics de-risking register — every gate reproduced from first principles, each with a validator card. Proof that the breeder and burner physics works, wired to the drawings and papers.">
+<link rel="canonical" href="https://kronosfusionenergy.com/register/">
+<meta property="og:title" content="The Kronos De-Risking Register — Proof Edition">
+<meta property="og:description" content="Every physics gate, reproduced and validated. The proof behind the Kronos machines.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"KRONOS Physics De-Risking Register — Tier-2 (Proof Edition)","description":"Reproduced de-risking gates for the Hyperion breeder and Aegis/MetroVolt burner, each with a validator card.","creator":{"@type":"Organization","name":"Kronos Fusion Energy"},"identifier":"https://doi.org/10.5281/zenodo.22133057","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kfe-shell.css"><script>window.KFE_SECTION='register';</script><script src="kfe-shell.js" defer></script>
+<style>
+:root{--bg:#1c232e;--panel:#252f3c;--line:rgba(150,165,190,.16);--gold:#d4ad5c;--ink:#e6ebf1;--dim:#aeb9c9;--mut:#8395ab;
+  --green:#57b98a;--blue:#5ea0c0;--mono:'Space Mono',monospace;--sans:'Space Grotesk',system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px 90px}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.hero{padding:46px 0 26px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(30px,4.6vw,48px);font-weight:700;line-height:1.05;margin:.22em 0 .2em;letter-spacing:-.015em;text-wrap:balance}
+.hero p{font-size:18px;color:var(--dim);max-width:66ch;margin:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:26px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.kpi b{font-family:var(--mono);font-size:26px;font-weight:700;display:block;line-height:1}
+.kpi span{font-size:12.5px;color:var(--mut);display:block;margin-top:6px}
+.kpi.g b{color:var(--green)}.kpi.b b{color:var(--blue)}.kpi.gold b{color:var(--gold)}
+.ptabs{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0 18px}
+.ptab{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);background:var(--panel);color:var(--dim);border-radius:10px;padding:9px 16px;cursor:pointer;font:600 14px var(--sans);border-top:3px solid transparent;min-width:150px}
+.ptab small{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:400}
+.ptab.on{color:#fff;border-color:var(--pac);box-shadow:inset 0 0 0 1px var(--pac);border-top:3px solid var(--pac)}
+.ptab.on small{color:var(--pac)}
+.ppane[hidden]{display:none}
+.tools{margin:4px 0 14px}.tools input{width:100%;max-width:420px;font:14px var(--sans);border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:var(--panel);color:var(--ink)}
+.gridg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.gcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.gcard img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#0e1319;border-bottom:1px solid var(--line);cursor:zoom-in}
+.gcard .nof{width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;background:#1f2733;color:#5d6b80;font:11px var(--mono);border-bottom:1px solid var(--line)}
+.gm{padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.gmh{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.05em;padding:2px 7px;border-radius:5px;background:rgba(94,160,192,.15);color:var(--blue)}
+.pill.done{background:rgba(87,185,138,.15);color:var(--green)}
+.gt{font-size:14px;font-weight:600;line-height:1.25}
+.gsub{font-family:var(--mono);font-size:10.5px;color:var(--mut)}
+.gres{font-size:12px;color:var(--dim);border-top:1px solid rgba(150,165,190,.1);padding-top:7px;line-height:1.4}
+.gv{font-size:12px}.gv b{color:var(--green);font-weight:600}
+.lb{position:fixed;inset:0;background:rgba(10,14,20,.9);display:none;align-items:center;justify-content:center;z-index:9999;padding:30px;cursor:zoom-out}
+.lb.on{display:flex}.lb img{max-width:96%;max-height:96%;border-radius:8px}
+.note{margin-top:40px;padding:16px 20px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;color:var(--dim);font-size:14px}
+.xlinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.xbtn{border:1px solid var(--line);border-radius:8px;padding:8px 14px;color:var(--gold);text-decoration:none;font-size:13.5px;font-weight:600}
+.xbtn:hover{background:var(--panel)}
+/* ===== generated validator card (KVAL) ===== */
+.kvcard{width:100%;aspect-ratio:16/10;background:linear-gradient(158deg,#26313f,#1a212b);padding:12px 14px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden;border-bottom:1px solid rgba(150,165,190,.14)}
+.kvcard .kv-top{display:flex;justify-content:space-between;align-items:center}
+.kvcard .kv-id{font-family:'Space Mono',monospace;font-size:11px;color:#d4ad5c;letter-spacing:.04em}
+.kvcard .kv-tag{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.14em;color:#7d8ba0}
+.kvcard .kv-sealrow{display:flex;align-items:center;gap:8px}
+.kvcard .kv-mark{width:26px;height:26px;color:#6e7c90;flex:none}
+.kvcard.ok .kv-mark{color:#57b98a}
+.kvcard .kv-stamp{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.08em;color:#6e7c90}
+.kvcard.ok .kv-stamp{color:#57b98a}
+.kvcard .kv-title{font-size:11.5px;color:#cdd7e2;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.kvcard .kv-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+.kvcard .kv-chip{font-family:'Space Mono',monospace;font-size:9px;background:rgba(94,160,192,.12);border:1px solid rgba(94,160,192,.25);border-radius:5px;padding:2px 6px;display:flex;gap:4px;align-items:baseline}
+.kvcard .kv-chip b{color:#e6ebf1;font-size:10.5px}.kvcard .kv-chip i{color:#8fa0b8;font-style:normal}
+.kvcard .kv-res{font-size:10.5px;color:#8fa0b8;line-height:1.35;margin:auto 0 0}
+.kvcard .kv-foot{font-family:'Space Mono',monospace;font-size:8.5px;color:#5d6b80;letter-spacing:.04em}
+
+.pxlinks{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:2px 0 14px;padding:10px 14px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--pac);border-radius:10px}
+.pxl-lead{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pac);margin-right:6px}
+.pxlinks a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:7px;padding:5px 11px}
+.pxlinks a:hover{border-color:var(--pac);background:#2a3441}
+/* ===== live-recompute widget (KVAL.mountLive) ===== */
+.klive{background:#1f2733;border:1px solid rgba(150,165,190,.2);border-left:3px solid #57b98a;border-radius:12px;padding:14px 16px;margin-top:12px}
+.klive+.klive{margin-top:10px}
+.kl-h{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.kl-t{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#57b98a}
+.kl-badge{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:2px 9px;border-radius:5px;background:rgba(87,185,138,.15);color:#57b98a;white-space:nowrap}
+.kl-badge.no{background:rgba(224,104,90,.15);color:#e0685a}
+.kl-inputs{display:flex;flex-wrap:wrap;gap:8px}
+.kl-in{display:flex;flex-direction:column;gap:3px;font-family:'Space Mono',monospace;font-size:10px;color:#8fa0b8}
+.kl-in input{width:120px;font-family:'Space Grotesk',sans-serif;font-size:13px;background:#2a3441;border:1px solid rgba(150,165,190,.3);border-radius:6px;padding:5px 8px;color:#e6ebf1}
+.kl-in em{color:#cdd7e2;font-style:normal;font-size:12px}
+.kl-arrow{font-family:'Space Mono',monospace;font-size:10px;color:#6e7c90;margin:9px 0}
+.kl-outputs{display:flex;flex-wrap:wrap;gap:10px}
+.kl-out{background:#2a3441;border:1px solid rgba(150,165,190,.18);border-radius:8px;padding:7px 12px;display:flex;flex-direction:column}
+.kl-out b{font-family:'Space Mono',monospace;font-size:16px;color:#e6ebf1}
+.kl-out span{font-family:'Space Mono',monospace;font-size:9.5px;color:#8fa0b8}
+.kl-exp{font-family:'Space Mono',monospace;font-size:11px;color:#8fa0b8;margin-top:8px}
+.kl-note{font-size:11.5px;color:#6e7c90;margin-top:8px}</style>
+</head><body>
+<div class="wrap">
+  <header class="hero">
+    <span class="kick">Kronos Fusion Energy · The Proof</span>
+    <h1>The de-risking register: the physics, reproduced.</h1>
+    <p>Every binding gate of the Kronos design, re-derived from first principles on established, community-benchmarked codes — each with a validator card you can inspect. This is the proof edition: the breeder that makes the fuel and the burner that turns it into power, gate by gate.</p>
+    <div class="xlinks">
+      <a class="xbtn" href="/publications">The 44 papers ↗</a>
+      <a class="xbtn" href="/derisking">De-risking overview ↗</a>
+      <a class="xbtn" href="https://doi.org/10.5281/zenodo.22133057" target="_blank" rel="noopener">Permanent record (DOI) ↗</a>
+    </div>
+  </header>
+  <div id="main"></div>
+</div>
+<div class="lb" id="lb"><img src="" alt=""></div>
+<script src="data/public_register.js"></script><script src="data/live_gates.js"></script><script src="_validators.js"></script>
+<script>
+var R=window.PUBREG||[], VC=window.PUBVC||{};
+function esc(s){return (s==null?'':(''+s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+var done=R.filter(function(r){return r.local_status==='DONE';}).length;
+var PRODUCTS=[
+ {key:'HYP',name:'Hyperion',tag:'Breeder',pac:'#5a79ad',page:'/hyperion',m:function(r){return r.machine==='breeder'||r.machine==='shared';}},
+ {key:'AEG',name:'Aegis',tag:'Burner',pac:'#c1863f',page:'/aegis',m:function(r){var p=(r.serial||'').split('-')[0];return p==='AG'||((r.machine==='burner'||r.machine==='shared')&&p!=='MV');}},
+ {key:'MTV',name:'MetroVolt',tag:'Burner',pac:'#3f9b72',page:'/metrovolt',m:function(r){var p=(r.serial||'').split('-')[0];return p==='MV'||((r.machine==='burner'||r.machine==='shared')&&p!=='AG');}}
+];
+var h='<div class="kpis">'+
+ '<div class="kpi b"><b>'+R.length+'</b><span>Public de-risking gates</span></div>'+
+ '<div class="kpi g"><b>'+done+'</b><span>Reproduced</span></div>'+
+ '<div class="kpi gold"><b>'+Object.keys(VC).length+'</b><span>Validator cards</span></div>'+
+ '<div class="kpi"><b>44</b><span>Published papers</span></div>'+
+ '<div class="kpi"><b>DOI</b><span>Permanent record</span></div></div>';
+h+='<div class="ptabs" id="ptabs">'+PRODUCTS.map(function(p,i){return '<button class="ptab'+(i===0?' on':'')+'" data-p="'+p.key+'" style="--pac:'+p.pac+'">'+p.name+'<small>'+p.tag+'</small></button>';}).join('')+'</div>';
+PRODUCTS.forEach(function(P,i){
+  var rows=R.filter(P.m);
+  h+='<div class="ppane" data-p="'+P.key+'"'+(i===0?'':' hidden')+'>';
+  h+='<div class="pxlinks" style="--pac:'+P.pac+'"><span class="pxl-lead">'+P.name+' · '+P.tag+'</span>'+
+     '<a href="'+P.page+'">The machine ↗</a><a href="/publications">Papers ↗</a><a href="/films">Film ↗</a><a href="/derisking">De-risking overview ↗</a></div>';
+  h+='<div class="tools"><input data-grid="g_'+P.key+'" placeholder="filter serial / title / domain / code / verdict…"></div>';
+  h+='<div class="gridg" id="g_'+P.key+'">'+rows.map(function(r){
+    var card=VC[r.serial];
+    var img=card?'<img loading="lazy" src="validators/'+esc(card)+'" alt="'+esc(r.serial)+' validator" data-full="validators/'+esc(card)+'">':KVAL.card(r);
+    return '<div class="gcard" data-row="'+esc((r.serial+' '+r.title+' '+r.domain+' '+r.code+' '+r.verdict).toLowerCase())+'">'+img+
+      '<div class="gm"><div class="gmh"><span class="pill">'+esc(r.serial)+'</span>'+(r.local_status==='DONE'?'<span class="pill done">reproduced</span>':'')+((window.KVAL&&KVAL.hasLive(r.serial))?'<span class="pill" style="background:rgba(87,185,138,.18);color:#57b98a">▸ live</span>':'')+'</div>'+
+      '<div class="gt"><a href="gate.html?s='+encodeURIComponent(r.serial)+'" style="color:inherit;text-decoration:none">'+esc(r.title)+'</a></div><div class="gsub">'+esc(r.domain||'')+(r.code?' · '+esc(r.code):'')+' · <a href="gate.html?s='+encodeURIComponent(r.serial)+'" style="color:var(--gold);text-decoration:none">gate page ↗</a></div>'+
+      (r.local_result?'<div class="gres">'+esc(String(r.local_result).slice(0,150))+'</div>':'')+
+      (r.verdict?'<div class="gv"><span style="color:var(--mut)">verdict: </span><b>'+esc(r.verdict)+'</b></div>':'')+
+      '</div></div>';
+  }).join('')+'</div></div>';
+});
+document.getElementById('main').innerHTML=h;
+var tabs=document.getElementById('ptabs');
+tabs.addEventListener('click',function(e){var b=e.target.closest('.ptab');if(!b)return;var k=b.getAttribute('data-p');
+  tabs.querySelectorAll('.ptab').forEach(function(x){x.classList.toggle('on',x===b);});
+  document.querySelectorAll('.ppane').forEach(function(x){x.hidden=(x.getAttribute('data-p')!==k);});});
+document.querySelectorAll('.tools input').forEach(function(inp){inp.addEventListener('input',function(){var q=inp.value.toLowerCase(),g=inp.getAttribute('data-grid');
+  document.querySelectorAll('#'+g+' .gcard').forEach(function(c){c.style.display=c.getAttribute('data-row').indexOf(q)>=0?'':'none';});});});
+var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+document.addEventListener('click',function(e){var t=e.target;
+  if(t.tagName==='IMG'&&t.closest('.gcard')){lbi.src=t.getAttribute('data-full');lb.classList.add('on');}
+  else if(t===lb||t===lbi){lb.classList.remove('on');lbi.src='';}});
+document.getElementById('main').insertAdjacentHTML('beforeend','<div class="note">The proof edition — '+R.length+' de-risking gates reproduced from first principles, canon-locked to the ratified freeze. Every headline number comes from an established code (CGYRO, OpenMC, ASCOT5, FreeGS, Quantum ESPRESSO); the full record is deposited with a permanent DOI. © 2026 Kronos Fusion Energy.</div>');
+</script>
+</body></html>
